@@ -26,16 +26,22 @@ const inBetween = (list, firstNumber, secondNumber) => {
     const newArray = [];
 
     list.forEach((element, i) => {
-        
-        if ( i >= firstNumber - 1 && secondNumber < list.length) {
+
+        if (secondNumber > list.length) {
+
+            return
+
+        } else if (i >= firstNumber - 1 && i < secondNumber) {
 
             newArray.push(element);
+
         }
+
     })
 
     return newArray;
 }
 
-const newArray = inBetween(animals, 4, 11);
+const newArray = inBetween(animals, 4, 14);
 
 console.log(newArray);
